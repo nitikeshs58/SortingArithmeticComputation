@@ -8,4 +8,5 @@ echo "$a $b $c"
 Expression1=$((a+b*c))
 Expression2=$((a*b+c))
 Expression3=$((c+a/b))
+Expression4=$((a%b+c))
 
