@@ -12,6 +12,7 @@ DictResult[Exp3]=$((c+a/b))
 DictResult[Exp4]=$((a%b+c))
 echo "${DictResult[@]}"
 
+#Read Values from Dictionary to array
 for (( counter=1; counter<=4; counter++ ))
 do
 	arrayResult[$counter]=${DictResult[Exp$counter]}
@@ -19,7 +20,8 @@ done
 
 echo "${arrayResult[@]}"
 
-for (( counter1=1; counter1<=4; counter1++ ))
+#Descending Order
+for (( counter1=1; counter1<=4; counter1++ )) 
 do
 	for (( counter2=1; counter2<4; counter2++ ))
 	do
@@ -33,3 +35,21 @@ do
 done
 
 echo "${!arrayResult[@]} : ${arrayResult[@]} "
+
+#Ascending Order
+for (( counter1=1; counter1<=4; counter1++ ))
+do
+   for (( counter2=1; counter2<4; counter2++ ))
+   do
+      if [[ ${arrayResult[$counter2]} -gt ${arrayResult[$(($counter2+1))]} ]]
+      then
+         temp=${arrayResult[$counter2]}
+         arrayResult[$counter2]=${arrayResult[$((counter2+1))]}
+         arrayResult[$((counter2+1))]=$temp
+      fi
+   done
+done
+
+echo "${!arrayResult[@]} : ${arrayResult[@]} "
+
+
