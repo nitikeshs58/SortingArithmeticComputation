@@ -10,3 +10,4 @@ DictResult[Exp1]=$((a+b*c))
 DictResult[Exp2]=$((a*b+c))
 DictResult[Exp3]=$((c+a/b))
 DictResult[Exp4]=$((a%b+c))
+echo "${DictResult[@]}"
