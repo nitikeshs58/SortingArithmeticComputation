@@ -6,3 +6,4 @@ read -p "Enter three Values: " a b c
 echo "$a $b $c"
 
 Expression1=$((a+b*c))
+Expression2=$((a*b+c))
